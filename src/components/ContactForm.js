@@ -10,6 +10,7 @@ const ContactForm = () => {
     setData(data);
   };
 
+
   return (
     <div className="App">
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -38,17 +39,17 @@ const ContactForm = () => {
         </div>
 
         <div>
-          <label htmlFor="email" placeholder="bluebill1049@hotmail.com">
+          <label htmlFor="email" >
             Email*
           </label>
-          <input name="email" ref={register({ required: true })} />
+          <input name="email" placeholder="bluebill1049@hotmail.com" ref={register({ required: true })} />
           {errors.email && (
             <p>Looks like there was an error: {errors.email.type}</p>
           )}
         </div>
         <div>
           <label htmlFor="message">Message</label>
-          <textarea name="message" ref={register({ required: false })} />
+          <textarea name="message" placeholder="Hi there!" ref={register({ required: false })} />
         </div>
         {data && (
           <pre style={{ textAlign: "left", color: "white" }}>
